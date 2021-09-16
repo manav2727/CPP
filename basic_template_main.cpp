@@ -54,7 +54,7 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    //var(n)
+    
 }
 
 
