@@ -1,0 +1,1 @@
+{"name":"Local: married_unmarried_icpc","url":"f:\\CPP\\married_unmarried_icpc.cpp","tests":[{"id":1628340475195,"input":"5\nM?M?\nMM?\nM?U\nUU?\n???","output":"Yes\nNo\nNo"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\CPP\\married_unmarried_icpc.cpp","group":"local","local":true}

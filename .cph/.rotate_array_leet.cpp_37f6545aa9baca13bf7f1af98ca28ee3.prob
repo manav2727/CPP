@@ -1,0 +1,1 @@
+{"name":"Local: rotate_array_leet","url":"f:\\CPP\\rotate_array_leet.cpp","tests":[{"id":1627392150237,"input":"","output":"15 13 2 5 \n14 3 4 1 \n12 6 8 9 \n16 7 10 11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\CPP\\rotate_array_leet.cpp","group":"local","local":true}

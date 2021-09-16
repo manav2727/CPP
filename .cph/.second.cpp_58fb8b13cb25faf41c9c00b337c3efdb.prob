@@ -1,0 +1,1 @@
+{"name":"Local: second","url":"f:\\CPP\\second.cpp","tests":[{"id":1630139215833,"input":"5\nAAAA\nBBBBB\nABABABAB\nBABABA\nAAABBB","output":"3\n4\n0\n0\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\CPP\\second.cpp","group":"local","local":true}

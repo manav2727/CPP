@@ -1,0 +1,1 @@
+{"name":"Local: break_merge_sort_icpc","url":"f:\\CPP\\break_merge_sort_icpc.cpp","tests":[{"id":1628345876718,"input":"4\n3\n3 3 1 2\n2 1 2\n4 1 2 3 4\n2\n2 1 3\n1 2\n1\n3 3 2 1\n1\n3 1000000000 7000 9000000","output":"3\n7\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\CPP\\break_merge_sort_icpc.cpp","group":"local","local":true}

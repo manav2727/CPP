@@ -1,0 +1,1 @@
+{"name":"Local: Implement_strstr_leet","url":"f:\\CPP\\Implement_strstr_leet.cpp","tests":[{"id":1627362725035,"input":"hello ll","output":"2"},{"id":1627363033099,"input":"abc","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\CPP\\Implement_strstr_leet.cpp","group":"local","local":true}
