@@ -17,6 +17,7 @@ typedef map<ll,pll> mpll;
 typedef set<ll> sll;
 
 
+
 #define test            ll t;cin>>t;while(t--)
 #define var(n)          ll n;cin>>n;
 #define vars(s)         string s;cin>>s;
@@ -53,7 +54,7 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    //var(n)
 }
 
 
