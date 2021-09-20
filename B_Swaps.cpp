@@ -54,37 +54,25 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    var(a)var(b)
-    vars(s)
-    ll n = s.length(),start=0,end = n-1;
-    while(s[start] == '0' && start<n)
-        start++;
-
-    if(start == n){
-        cout<<"0\n";
-        return;
+    var(n)
+    mll m1,m2;
+    ll arr1[n],arr2[n];
+    for(ll i=0;i<n;i++){
+        cin>>arr1[i];
+        m1[arr1[i]] = i;
     }
-
-    while(s[end] == '0' && end>=0)
-        end--;
-    vpll v;
-    ll ans = 0;
-    for(ll i = start;i<=end;i++){
-        ll fst = 0,snd = 0;
-        if(s[i] == '1'){
-            fst = i;
-            while(s[i] == '1')
-                i++;
-            snd = i-1;
-            v.push_back(make_pair(fst,snd));
+    for(ll i=0;i<n;i++){
+        cin>>arr2[i];
+        m2[arr2[i]] = i;
+    }
+    ll ans = inf;
+    for(auto &i:m1){
+        auto it = m2.lower_bound(i.first);
+        if(it != m2.end()){
+            ans = min(i.second+(*it).second,ans);
         }
     }
-    ans += a;
-    for(ll i=1;i<v.size();i++){
-        ans += min((v[i].first - v[i-1].second-1)*b,a);
-    }
     cout<<ans<<"\n";
-
 }
 
 

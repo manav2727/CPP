@@ -54,37 +54,28 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    var(a)var(b)
-    vars(s)
-    ll n = s.length(),start=0,end = n-1;
-    while(s[start] == '0' && start<n)
-        start++;
-
-    if(start == n){
-        cout<<"0\n";
-        return;
+    var(n)var(k)
+    multiset<ll> m;
+    ll x = 0;
+    for(ll i=0;i<n;i++){
+        cin>>x;
+        m.insert(x);
     }
-
-    while(s[end] == '0' && end>=0)
-        end--;
-    vpll v;
-    ll ans = 0;
-    for(ll i = start;i<=end;i++){
-        ll fst = 0,snd = 0;
-        if(s[i] == '1'){
-            fst = i;
-            while(s[i] == '1')
-                i++;
-            snd = i-1;
-            v.push_back(make_pair(fst,snd));
+    ll ans = 1,left = k;
+    while(!m.empty()){
+        auto it = m.upper_bound(left);
+        if(it == m.begin()){
+            ans++;
+            left = k;
+        }
+        else{
+            it--;
+            ll temp = *it;
+            left -= temp;
+            m.erase(it);
         }
     }
-    ans += a;
-    for(ll i=1;i<v.size();i++){
-        ans += min((v[i].first - v[i-1].second-1)*b,a);
-    }
     cout<<ans<<"\n";
-
 }
 
 

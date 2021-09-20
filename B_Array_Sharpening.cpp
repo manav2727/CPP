@@ -54,37 +54,21 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    var(a)var(b)
-    vars(s)
-    ll n = s.length(),start=0,end = n-1;
-    while(s[start] == '0' && start<n)
-        start++;
-
-    if(start == n){
-        cout<<"0\n";
-        return;
-    }
-
-    while(s[end] == '0' && end>=0)
-        end--;
-    vpll v;
-    ll ans = 0;
-    for(ll i = start;i<=end;i++){
-        ll fst = 0,snd = 0;
-        if(s[i] == '1'){
-            fst = i;
-            while(s[i] == '1')
-                i++;
-            snd = i-1;
-            v.push_back(make_pair(fst,snd));
+    var(n)
+    inp(arr,n)
+    for(ll i=0;i<ceil((double)n/2);i++){
+        if(arr[i]<i || arr[n-i-1]<i){ 
+            cout<<"No\n";
+            return;
         }
     }
-    ans += a;
-    for(ll i=1;i<v.size();i++){
-        ans += min((v[i].first - v[i-1].second-1)*b,a);
+    if(n%2 == 0){
+        if(arr[n/2]<n/2 && arr[n/2-1]<n/2){
+            cout<<"No\n";
+            return;
+        }
     }
-    cout<<ans<<"\n";
-
+    cout<<"Yes\n";
 }
 
 

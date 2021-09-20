@@ -54,37 +54,27 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    var(a)var(b)
-    vars(s)
-    ll n = s.length(),start=0,end = n-1;
-    while(s[start] == '0' && start<n)
-        start++;
-
-    if(start == n){
-        cout<<"0\n";
-        return;
+    var(n)var(m)
+    vvll v;
+    for(ll i=0;i<n;i++){
+        inp(arr,m)
+        v.push_back(arr);
     }
-
-    while(s[end] == '0' && end>=0)
-        end--;
-    vpll v;
     ll ans = 0;
-    for(ll i = start;i<=end;i++){
-        ll fst = 0,snd = 0;
-        if(s[i] == '1'){
-            fst = i;
-            while(s[i] == '1')
-                i++;
-            snd = i-1;
-            v.push_back(make_pair(fst,snd));
+    for(ll i=0;i<n;i++){
+        for(ll j=0;j<m;j++){
+            ll curRow = v[i][m-j-1];
+            ll curCol = v[n-i-1][j];
+            vll temp;
+            temp.push_back(v[i][j]);
+            temp.push_back(curCol);
+            temp.push_back(curRow);
+            sort(temp.begin(),temp.end());
+            ans += (temp[2] - temp[0]); // temp[1] - temp[0] + temp[2] - temp[1]
+            v[i][j] = v[i][m-j-1] = v[n-i-1][j] = temp[1]; // assign all 3 no.s the avg of all 3;
         }
     }
-    ans += a;
-    for(ll i=1;i<v.size();i++){
-        ans += min((v[i].first - v[i-1].second-1)*b,a);
-    }
     cout<<ans<<"\n";
-
 }
 
 

@@ -52,44 +52,42 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 // string(1,char(i))+char(j))....to concatenate 2 or more characters using ascii
 // ASCII of 'a'-97,'z'-123,'A'-65,'Z'-90,'0'-48,'9'-57
 
-
+vll v;
 void LetsSolveIt(){
-    var(a)var(b)
-    vars(s)
-    ll n = s.length(),start=0,end = n-1;
-    while(s[start] == '0' && start<n)
-        start++;
-
-    if(start == n){
+    var(n)
+    string s = to_string(n);
+    if(!n&(n-1)){
         cout<<"0\n";
         return;
     }
-
-    while(s[end] == '0' && end>=0)
-        end--;
-    vpll v;
-    ll ans = 0;
-    for(ll i = start;i<=end;i++){
-        ll fst = 0,snd = 0;
-        if(s[i] == '1'){
-            fst = i;
-            while(s[i] == '1')
-                i++;
-            snd = i-1;
-            v.push_back(make_pair(fst,snd));
+    ll ans = inf;
+    for(ll i=0;i<v.size();i++){
+        string temp = to_string(v[i]);
+        ll notMatch = 0,sInd = 0,tempInd = 0;
+        while(sInd<s.length() && tempInd<temp.length()){
+            if(s[sInd] == temp[tempInd])
+                tempInd++;
+            else
+                notMatch++;
+            sInd++;
         }
-    }
-    ans += a;
-    for(ll i=1;i<v.size();i++){
-        ans += min((v[i].first - v[i-1].second-1)*b,a);
+        ans = min(ans, notMatch + (s.length() - sInd) + (temp.length() - tempInd));
     }
     cout<<ans<<"\n";
-
 }
-
+// (s.length() - sInd) - if suppose, 102467 is our no. and comparing with 1024
+// then we have to delete last 2 - 67
+// notMatch - to delete elements from middle which are not matching
+// (temp.length() - tempInd) - if suppose given no. is 10, and comparing with 1024
+// then we add 2 elements - 24
 
 signed main(){ 
     FIO;
+    ll x = 1;
+    while(x<1e18){
+        v.push_back(x);
+        x *= 2;
+    }
     test
         LetsSolveIt();
 }
