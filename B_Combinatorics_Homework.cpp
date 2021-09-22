@@ -54,36 +54,24 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    var(n)
-    vpll m1,m2;
-    ll arr1[n],arr2[n];
-    for(ll i=0;i<n;i++){
-        cin>>arr1[i];
-        m1.push_back(make_pair(arr1[i],i));
+    inp(arr,3)var(m)
+    ll pairs = 0;
+    sort(arr.begin(),arr.end());
+    for(ll i=0;i<3;i++)
+        pairs += (arr[i]-1);
+    // cout<<pairs<<"\n";
+    if(pairs<m){
+        cout<<"NO\n";
+        return;
     }
-    for(ll i=0;i<n;i++){
-        cin>>arr2[i];
-        m2.push_back(make_pair(arr2[i],i));
+    ll mini = max(0ll,arr[2] - arr[1] - arr[0]-1);
+    // cout<<mini<<"\n";
+    if(m>=mini && m<=pairs){
+        cout<<"YES\n";
     }
-    ll ans = inf;
-    sort(m1.begin(),m1.end());
-    sort(m2.begin(),m2.end());
-    vll v(n);
-    v[n-1] = m2[n-1].second;
-    for(ll i=n-2;i>=0;i--){
-        v[i] = min(v[i+1],m2[i].second); 
+    else{
+        cout<<"NO\n";
     }
-    // 5
-    // 7 5 9 1 3
-    // 2 6 4 10 8
-    // for this example, for 3, it is not necessary to find minimum greater than 3 i.e. 4
-    // we can take 6 also, as 6 is more near to 0 index than 4
-    // so we are keeping a track of all element's indices greater than current in 1st array
-    // and take the minimum of all those indices
-    for(ll i=0;i<n;i++){
-        ans = min(ans, v[i] + m1[i].second); 
-    }
-    cout<<ans<<"\n";
 }
 
 
