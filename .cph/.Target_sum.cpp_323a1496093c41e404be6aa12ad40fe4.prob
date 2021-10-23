@@ -1,0 +1,1 @@
+{"name":"Local: Target_sum","url":"f:\\CPP\\Target_sum.cpp","tests":[{"id":1633580433248,"input":"4\n1 1 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\CPP\\Target_sum.cpp","group":"local","local":true}
