@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,12 +55,19 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    ll totalNodes = pow(2ll,n) - 2;
+    ll totalCombiForOne = 0;
+    totalCombiForOne = fpow(4ll, totalNodes);
+    ll ans = 6*totalCombiForOne;
+    cout<<ans%mod;
+    // for 1st node, it has 6 choices, and rest nodes(2^n - 2) will have 4 choices
+    // therefore 4^(2^(n-1)) * 6
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

@@ -56,12 +56,30 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    inp(arr,n)
+    vll m(100005,0);
+    ll maxi = 0, ans = 0;
+    for(ll i=0;i<n;i++)
+    {
+        maxi = max(maxi, arr[i]);
+        m[arr[i]]++;
+    }
+    vll dp(maxi+1,0);
+    dp[1] = m[1];
+    dp[2] = max(dp[1], 2*m[2]);
+    ans = max(dp[1], dp[2]);
+    for(ll i=3;i <= maxi;i++)
+    {
+        dp[i] = max(dp[i-1], dp[i - 2] + i*m[i]);
+        ans = max(ans, dp[i]);
+    }
+    cout<<ans;
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

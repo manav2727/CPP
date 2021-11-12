@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,12 +55,41 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)var(k)
+    vsll v;
+    for(ll i=0;i<n;i++){
+        vars(s)
+        v.push_back(s);
+    }
+    string ans = "",mid="";
+    vll vis(n,0);
+    for(ll i=0;i<n;i++){
+        string temp = v[i];
+        reverse(temp.begin(),temp.end());
+        if(v[i] == temp)
+                mid = v[i];
+
+        for(ll j = i+1;j<n;j++){
+            if(temp == v[j] && vis[i] == 0 && vis[j] == 0){
+                ans += v[i];
+                ans = v[j] + ans;
+                vis[i] = 1;
+                vis[j] = 1;
+            }
+        }
+    }
+    // cout<<ans<<"\n"<<mid<<"\n";
+    cout<<ans.length() + mid.length()<<"\n";
+    for(ll i=0;i<ans.length()/2;i++)
+        cout<<ans[i];
+    cout<<mid;
+    for(ll i=ans.length()/2;i<ans.length();i++)
+        cout<<ans[i];
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

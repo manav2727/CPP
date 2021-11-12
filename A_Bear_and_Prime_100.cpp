@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,12 +55,37 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    ll cnt = 0;
+    for(ll i=2;i <= 50;i++){
+        if(isPrime(i)){
+            cout<<i<<"\n";
+            cout.flush();
+            vars(s)
+            if(s == "yes")
+                cnt++;
+
+            if(i*i < 50){
+                cout<<i*i<<"\n";
+                cout.flush();
+                vars(s)
+                if(s == "yes")
+                    cnt++;
+            }
+        }
+        if(cnt >= 2){
+            cout<<"composite\n";
+            cout.flush();
+            return;
+        }
+    }
+    cout<<"prime\n";
+    cout.flush();
+
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

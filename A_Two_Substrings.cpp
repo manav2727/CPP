@@ -56,12 +56,61 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    vars(s)
+    ll n = s.length();
+    ll flag=0,pos1=0;
+    if(n<=3)
+    {
+        cout<<"NO";
+        return;
+    }
+    for(ll i=1;i<n;i++)
+    {
+        if(s[i-1] == 'A' && s[i] == 'B')
+        {
+            flag++;
+            pos1 = i;
+            break;
+        }
+    }
+    if(flag)
+    {
+        for(ll i=pos1 + 2;i<n;i++)
+        {
+            if(s[i-1] == 'B' && s[i] == 'A')
+            {
+                cout<<"YES";
+                return;
+            }
+        }
+    }
+    flag = 0,pos1 = 0;
+    for(ll i=1;i<n;i++)
+    {
+        if(s[i-1] == 'B' && s[i] == 'A')
+        {
+            flag++;
+            pos1 = i;
+            break;
+        }
+    }
+    if(flag)
+    {
+        for(ll i=pos1 + 2;i<n;i++)
+        {
+            if(s[i-1] == 'A' && s[i] == 'B')
+            {
+                cout<<"YES";
+                return;
+            }
+        }
+    }
+    cout<<"NO";
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

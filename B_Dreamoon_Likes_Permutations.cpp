@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,7 +55,75 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    inp(arr,n)
+    ll sum1 = 0,maxi = 0,fst = 0;
+    mll m;
+    set<pll> s;
+    for(ll i=0;i<n;i++){
+        m[arr[i]]++;
+        if(m[arr[i]]>2){
+            cout<<"0\n";
+            return;
+        }
+    }
+    m.clear();
+    for(ll i=0;i<n;i++){
+        if(m[arr[i]] == 0){
+            m[arr[i]]++;
+            sum1 += arr[i];
+            maxi = max(maxi,arr[i]);
+        }
+        else{
+            if((maxi*(maxi+1))/2 == sum1){
+                fst = i;
+                sum1 = arr[i];
+                m.clear();
+                m[arr[i]]++;
+                maxi = arr[i];
+            }
+            else{
+                break;
+            }
+        }
+        if(i == n-1){
+            if((maxi*(maxi+1))/2 == sum1){
+                s.insert(make_pair(fst, n-fst));
+            }
+        }
+    }
+
+    reverse(arr.begin(),arr.end());
+    sum1 = 0,maxi = 0,fst = 0;
+    m.clear();
+    for(ll i=0;i<n;i++){
+        if(m[arr[i]] == 0){
+            m[arr[i]]++;
+            sum1 += arr[i];
+            maxi = max(maxi,arr[i]);
+        }
+        else{
+            if((maxi*(maxi+1))/2 == sum1){
+                fst = i;
+                sum1 = arr[i];
+                m.clear();
+                m[arr[i]]++;
+                maxi = arr[i];
+            }
+            else{
+                break;
+            }
+        }
+        if(i == n-1){
+            if((maxi*(maxi+1))/2 == sum1){
+                s.insert(make_pair(n-fst, fst));
+            }
+        }
+    }
+    cout<<s.size()<<"\n";
+    for(auto i:s){
+        cout<<i.first<<" "<<i.second<<"\n";
+    }
 }
 
 

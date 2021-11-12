@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -30,10 +29,11 @@ typedef set<ll> sll;
 #define inf             1e18
 #define dec(x)         cout<<fixed<<setprecision(x)<<endl;
 #define FIO             ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-
+ 
 
 bool isPrime(ll n){if(n <= 1)return false;if(n <= 3)return true;if(n%2 == 0 || n%3 == 0)return false;for(ll i=5; i*i<=n; i=i+6)if(n%i == 0 || n%(i+2) == 0)return false;return true;}
 ll nextPrime(ll N){if(N<=1)return 2;ll prime = N;bool found = false;while(!found){prime++;if(isPrime(prime))found=true;}return prime;}
+vll sortIt(vll &arr){sort(arr.begin(),arr.end());}
 
 ll cl(ll n,ll d){return (n+d-1)/d;} 
 ll gcd(ll a, ll b) {if (b == 0)return a; return gcd(b, a % b);}
@@ -56,7 +56,16 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    inp(arr,n)
+    sort(arr.begin(),arr.end());
+    ll sum1 = 0;
+    for(ll i=0;i<n;i++){
+        sum1 += arr[i];
+    }
+    ll temp = max(cl(sum1 , n-1), arr[n-1]);
+    ll ans = temp*(n-1);
+    cout<<(ans - sum1)<<"\n";
 }
 
 

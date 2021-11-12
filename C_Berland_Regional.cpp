@@ -56,7 +56,45 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    inp(arr1,n)
+    inp(arr2,n)
+    // vpll arr;
+    ll maxi = 0;
+    mvll arr;
+    for(ll i=0;i<n;i++){
+        arr[arr1[i]].push_back(arr2[i]);
+    }
+    vvll temp;
+    for(auto &i:arr){
+        sort(i.second.begin(),i.second.end());
+        temp.push_back(i.second);
+    }
+    vvll prefs;
+    for(ll i=0;i<temp.size();i++){
+        // cout<<i.size()<<" ";
+        vll tempPref;
+        for(ll j=0;j<temp[i].size();j++){
+            if(j == 0)
+                tempPref.push_back(temp[i][j]);
+            else 
+                tempPref.push_back(temp[i][j] + tempPref[j-1]);
+            // cout<<tempPref[j]<<" ";
+        }
+        prefs.push_back(tempPref);
+    }
+    vll ans(n,0);
+    for(auto &i:prefs){
+        for(ll j=1;j<=i.size();j++){
+            if(i.size() % j)
+                ans[j-1] += (i.back() - i[i.size() % j - 1]);
+            else 
+                ans[j-1] += i.back();
+        }
+    }
+    for(auto &i:ans)
+        cout<<i<<" ";
+    cout<<"\n";
 }
 
 

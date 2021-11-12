@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,7 +55,32 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    vars(s)
+    ll n = s.length();
+    ll ans = 0, prev0 = 0,prev1 = 0;
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i] == '0')
+        {
+            prev0++;
+            prev1 = 0;
+            ans += prev0;
+        }
+        else if(s[i] == '1')
+        {
+            prev1++;
+            prev0 = 0;
+            ans += prev1;
+        }
+        else
+        {
+            prev0++;
+            prev1++;
+            ans += max(prev0, prev1);
+        }
+        swap(prev0, prev1);
+    }
+    cout<<ans<<"\n";
 }
 
 

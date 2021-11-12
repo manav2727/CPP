@@ -56,7 +56,32 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)var(p)var(k)
+    vars(s)
+    var(x)var(y)
+    vll dp(n,0);
+    for(ll i=n-1;i>=p-1;i--)
+    {
+        if(i >= n-k)
+        {
+            if(s[i] == '0')
+                dp[i] = x;
+        }
+        else
+        {
+            if(s[i] == '0')
+                dp[i] = x;
+            // cout<<i<<" "<<dp[i]<<"\n";
+            dp[i] += dp[i+k];
+        }
+    }
+    ll ans = inf;
+    for(ll i=p-1;i<n;i++)
+    {
+        ans = min(ans, dp[i] + y*(i - (p - 1)));
+    }
+    // print(dp);
+    cout<<ans<<"\n";
 }
 
 

@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,7 +55,35 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    vpll arr;
+    for(ll i=0;i<n;i++){
+        var(x)
+        arr.push_back(make_pair(x,i+1));
+    }
+    sort(arr.begin(),arr.end());
+    vll m(n,0);
+    ll sum1 = 0;
+    for(ll i=0;i<n;i++){
+        sum1 += arr[i].first;
+        m[i] = sum1;
+    }
+
+    sll final;
+    arr.push_back(make_pair(0ll,n));
+    for(ll i=0;i<n;i++){
+        if(m[i] >= arr[i+1].first){
+            final.insert(arr[i].second);
+        }
+        else{
+            final.clear();
+        }
+    }
+    cout<<final.size()<<"\n";
+    for(auto i:final){
+        cout<<i<<" ";
+    }
+    cout<<"\n";
 }
 
 

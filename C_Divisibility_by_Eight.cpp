@@ -56,12 +56,61 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    vars(s)
+    int n = s.length();
+    for(int i=0;i<n;i++)
+    {
+        if(s[i] == '8')
+        {
+            cout<<"YES\n8";
+            return;
+        }
+        if(s[i] == '0')
+        {
+            cout<<"YES\n0";
+            return;
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            string temp = "";
+            temp += s[i];
+            temp += s[j];
+            if(stoi(temp) % 8 == 0)
+            {
+                cout<<"YES\n";
+                cout<<temp;
+                return;
+            }
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            for(int k=j+1;k<n;k++)
+            {
+                string temp = "";
+                temp += s[i];
+                temp += s[j];
+                temp += s[k];
+                if(stoi(temp) % 8 == 0)
+                {
+                    cout<<"YES\n";
+                    cout<<temp;
+                    return;
+                }
+            }
+        }
+    }
+    cout<<"NO";
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

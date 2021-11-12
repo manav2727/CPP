@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,12 +55,25 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
+    var(n)
+    inp(arr,n)
+    vll v(n+1,0);
+    for(ll i=0;i<n;i++)
+    {
+        v[i+1] = v[i] + arr[i];
+    }
+    var(q)
+    for(ll i=0;i<q;i++)
+    {
+        var(x)var(y)
+        cout<<(v[y] - v[x-1])/10<<"\n";
+    }
     
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

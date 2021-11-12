@@ -56,12 +56,22 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    ll sones=3,szeros=2,fones=4,fzeros=3,t1=0,t2=0;
+    for(ll i=3;i<=n;i++)
+    {
+        t1 = fones,t2 = fzeros;
+        fones += 3*szeros;
+        fzeros = 2*fzeros + 2*sones;
+        sones = t1,szeros = t2;
+        cout<<fones<<" "<<fzeros<<"\n";
+    }
+    cout<<fones;
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

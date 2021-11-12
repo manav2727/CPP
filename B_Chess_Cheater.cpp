@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,7 +55,56 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)var(k)
+    vars(s)
+    ll w = 0;
+    vll lose;
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i] == 'W')
+            w++;
+    }
+    if(w == 0)
+    {
+        cout<<max(0ll, 2*k - 1)<<"\n";
+        return;
+    }
+    w += k; //max  wins
+    if(w >= n)
+    {
+        cout<<2*n - 1<<"\n";
+        return;
+    }
+    ll temp = 0;
+    for(ll i=0;i<n;i++)
+    {
+        if(s[i] == 'L')
+        {
+            temp++;
+        }
+        else
+        {
+            if(temp != 0)
+                lose.push_back(temp);
+            temp = 0;
+        }
+    }
+    if(temp != 0)
+        lose.push_back(temp);
+    if(s[0] == 'L')
+        lose.erase(lose.begin());
+    if(s[n-1] == 'L')
+        lose.pop_back();
+    sort(lose.begin(),lose.end());
+    ll sum1 = 0,i=0;
+    for( i=0;i<lose.size();i++)
+    {
+        if(sum1 + lose[i] > k)
+            break;
+        sum1 += lose[i];
+    }
+    ll left_gaps = lose.size() - i;
+    cout<<( 2*w - left_gaps - 1)<<"\n";
 }
 
 

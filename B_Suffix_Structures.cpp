@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,12 +55,44 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    vars(s)
+    vars(t)
+    ll fst=0,snd=0;
+    while(fst<s.length() && snd<t.length()){
+        if(s[fst] == t[snd])
+            fst++,snd++;
+        else
+            fst++;
+    }
+    if(snd == t.length()){
+        cout<<"automaton";
+        return;
+    }
+    sort(s.begin(),s.end());
+    sort(t.begin(),t.end());
+    fst=0,snd=0;
+    while(fst<s.length() && snd<t.length()){
+        if(s[fst] == t[snd])
+            fst++,snd++;
+        else
+            fst++;
+    }
+    // cout<<fst<<" "<<snd;
+    if(fst == snd && fst == s.length() && snd == t.length()){
+        cout<<"array";
+        return;
+    }
+    if(fst > snd && snd == t.length()){
+        cout<<"both";
+        return;
+    }
+    cout<<"need tree";
+    return;
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

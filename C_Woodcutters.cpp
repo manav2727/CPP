@@ -56,12 +56,39 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    vpll arr;
+    ll ans = 0;
+    for(ll i=0;i<n;i++)
+    {
+        var(x)var(y);
+        arr.push_back(make_pair(x,y));
+    }
+    for(ll i=0;i<n;i++)
+    {
+        if(i == 0 || i == n-1)
+        {
+            ans++;
+        }
+        else
+        {
+            if(arr[i].second < arr[i].first - arr[i-1].first )
+            {
+                ans++;
+            }
+            else if(arr[i].second < arr[i+1].first - arr[i].first)
+            {
+                ans++;
+                arr[i].first += arr[i].second;
+            }
+        }
+    }
+    cout<<ans;
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

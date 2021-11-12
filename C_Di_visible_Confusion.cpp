@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,7 +55,20 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    inp(arr,n)
+    ll l=2;
+    for(ll i=0;i<n;i++){
+        l = lcm(l,i+2); // precalculating lcm of all indices starting from 2
+        // at any point, if the arr[i] is divisible by that lcm, then it is divisible by all the no.s from 2 to that lcm
+        if(l >= 1e9)
+            break;
+        if(arr[i] % l == 0){
+            cout<<"NO\n";
+            return;
+        }
+    }
+    cout<<"YES\n";
 }
 
 

@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -56,12 +55,57 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    vars(s)
+    string temp = "RGB";
+
+    if(n == 1){
+        cout<<"0\n"<<s;
+        return;
+    }
+    if(n == 2){
+        if(s[0] != s[1]){
+            cout<<"0\n"<<s;
+            return;
+        }
+        for(int j = 0;j < 3;j++){
+            if(s[0] != temp[j]){
+                s[0] = temp[j];
+                break;
+            }
+        }
+        cout<<1<<"\n"<<s;
+        return;
+    }
+    ll ans = 0;
+    for(ll i=1;i<n-1;i++){
+        if(s[i] == s[i-1] && s[i] == s[i+1]){
+            for(int j = 0;j < 3;j++){
+                if(s[i-1] != temp[j] && s[i+1] != temp[j]){
+                    s[i] = temp[j];
+                    ans++;
+                    break;
+                }
+            }
+        }
+    }
+    for(ll i=1;i<n-1;i++){
+        if(s[i] == s[i-1] || s[i] == s[i+1]){
+            for(int j = 0;j < 3;j++){
+                if(s[i-1] != temp[j] && s[i+1] != temp[j]){
+                    s[i] = temp[j];
+                    ans++;
+                    break;
+                }
+            }
+        }
+    }
+    cout<<ans<<"\n"<<s;
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

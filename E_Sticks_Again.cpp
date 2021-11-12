@@ -56,7 +56,54 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    inp(arr,4*n)
+    sort(arr.begin(),arr.end());
+    // print(arr);
+    // cout<<"\n";
+    // for(ll i = 0;i < 4*n - 2;i += 2)
+    // {
+    //     // cout<<arr[i]<<"mmk\n";
+    //     if(arr[i] != arr[i+1])
+    //     {
+    //         cout<<"NO\n";
+    //         return;
+    //     }
+    //     for(ll j = i + 2;j < 4*n;j += 2)
+    //     {
+    //         if(arr[j] != arr[j+1])
+    //         {
+    //             cout<<"NO\n";
+    //             return;
+    //         }
+    //         m[arr[i]*arr[j]]++;
+    //     }
+    // }
+    // for(auto i:m)
+    // {
+    //     cout<<i.first<<" "<<i.second<<"\n";
+    // }
+    for(ll i=0;i<4*n;i+=2)
+    {
+        if(arr[i] != arr[i+1])
+        {
+            cout<<"NO\n";
+            return;
+        }
+    }
+    ll l = 0, r = 4*n-2;
+    sll s;
+    while(l < r)
+    {
+        
+        s.insert(arr[l]*arr[r]);
+        l += 2;
+        r -= 2;
+    }
+    if(s.size() == 1)
+        cout<<"YES\n";
+    else 
+        cout<<"NO\n";
 }
 
 

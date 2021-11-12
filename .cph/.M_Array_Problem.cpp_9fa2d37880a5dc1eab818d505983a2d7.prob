@@ -1,0 +1,1 @@
+{"name":"Local: M_Array_Problem","url":"f:\\CPP\\M_Array_Problem.cpp","tests":[{"id":1636641756842,"input":"5 \n7 3 2 1 1","output":"2"},{"id":1636641770317,"input":"3\n1 1 1","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\CPP\\M_Array_Problem.cpp","group":"local","local":true}

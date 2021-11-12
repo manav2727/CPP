@@ -56,7 +56,14 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    cout<<n-2<<"\n";
+    cout<<n<<" "<<n-1<<"\n";
+    cout<<n<<" "<<n-1<<"\n";
+    for(ll i = n-1;i>=3;i--)
+    {
+        cout<<i-1<<" "<<i<<"\n";
+    }
 }
 
 

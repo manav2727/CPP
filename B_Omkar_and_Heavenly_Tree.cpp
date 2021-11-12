@@ -56,7 +56,25 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)var(k)
+    mll m;
+    for(ll i=0;i<k;i++)
+    {
+        var(x)var(y)var(z)
+        m[y]++;
+    }
+    for(ll i=1;i<=n;i++)
+    {
+        if(m[i] == 0)
+        {
+            for(ll j = 1;j<=n;j++)
+            {
+                if(j != i)
+                    cout<<i<<" "<<j<<"\n";
+            }
+            return;
+        }
+    }
 }
 
 

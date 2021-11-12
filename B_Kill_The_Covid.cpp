@@ -56,6 +56,23 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
+    var(n)var(h)
+    inp(arr,n)
+    sort(arr.begin(),arr.end());
+    ll maxi = arr[n-1],maxi2 = arr[n-2];
+    ll sum1 = maxi + maxi2;
+    if(h <= maxi)
+        cout<<"1\n";
+    else if(h <= maxi + maxi2)
+        cout<<"2\n";
+    else
+    {
+        ll temp = cl(h,sum1)*sum1;
+        if(temp - h >= maxi2)
+            cout<<(temp/sum1)*2 - 1<<"\n";
+        else 
+            cout<<(temp/sum1)*2<<"\n";
+    }
     
 }
 

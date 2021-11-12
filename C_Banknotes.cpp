@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -54,9 +53,26 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 // string(1,char(i))+char(j))....to concatenate 2 or more characters using ascii
 // ASCII of 'a'-97,'z'-123,'A'-65,'Z'-90,'0'-48,'9'-57
 
-
+ll v[] = {1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000};
 void LetsSolveIt(){
-    
+    var(n)var(k)
+    inp(arr,n)
+    k++;
+    vll req(n,0);
+    ll ans = 0,temp=0;
+    for(ll i=0;i<n-1;i++){
+        req[i] = (v[arr[i+1] - arr[i]]) - 1;
+    }
+    for(ll i=0;i<n-1;i++){
+        if(req[i] <= k){
+            ans += (req[i]*v[arr[i]]),k -= req[i];
+        }
+        else 
+            ans += (k*v[arr[i]]),k = 0;
+    }
+    if(k)
+        ans += (k*v[arr[n-1]]);
+    cout<<ans<<"\n";
 }
 
 

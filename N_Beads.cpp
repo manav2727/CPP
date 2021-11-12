@@ -56,12 +56,43 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
+    var(n)
+    inp(arr,n)
+    ll ans = 0,l=0;
+    vpll v;
+    sll s;
+    for(ll i=0;i<n;i++)
+    {
+        if(s.find(arr[i]) == s.end())
+        {
+            s.insert(arr[i]);
+        }
+        else
+        {
+            v.push_back(make_pair(l + 1,i + 1));
+            l = i+1;
+            s.clear();
+        }
+        
+    }
+    
+    if(v.empty())
+    {
+        cout<<-1;
+    }
+    else
+    {
+        v.back().second = n;
+        cout<<v.size()<<"\n";
+        for(ll i=0;i<v.size();i++)
+            cout<<v[i].first<<" "<<v[i].second<<"\n";
+    }
     
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

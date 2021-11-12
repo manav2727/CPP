@@ -54,14 +54,49 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 // string(1,char(i))+char(j))....to concatenate 2 or more characters using ascii
 // ASCII of 'a'-97,'z'-123,'A'-65,'Z'-90,'0'-48,'9'-57
 
+ll ans = 0,n = 1e5+1,k;
+vvll m(n);
+vll arr(n);
 
+
+void dfs(ll i, ll prev, ll cnt, ll maxi)
+{
+    if(arr[i])
+        cnt++;
+    else 
+        cnt = 0;
+    maxi = max(maxi, cnt);
+    ll child = 0;
+    for(auto j:m[i])
+    {
+        if(j != prev)
+        {
+            dfs(j, i, cnt, maxi);
+            child++;
+        }
+    }
+    if(child == 0 && maxi <= k)
+        ans++;
+}
 void LetsSolveIt(){
-    
+    cin>>n>>k;
+    for(ll i=1;i<=n;i++)
+    {
+        cin>>arr[i];
+    }
+    for(ll i=0;i<n-1;i++)
+    {
+        var(x)var(y)
+        m[x].push_back(y);
+        m[y].push_back(x);
+    }
+    dfs(1, -1, 0, 0);
+    cout<<ans;
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

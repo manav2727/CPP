@@ -12,7 +12,6 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
-typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
 typedef map<pll,ll> mpll;
 typedef set<ll> sll;
@@ -45,7 +44,7 @@ ll msub(ll a,ll b){return ((a%mod)-(b%mod)+mod)%mod;}
 ll fpow(ll x,ll y,ll p=mod){x%=p;ll sum = 1;while(y){if (y & 1)sum = sum * x; sum %= p; y = y >> 1; x = x * x; x %= p;} return sum;}
 bool isPerSquare(ld a) {if(a<0) return false; ll sr = sqrt(a); return (sr*sr == a);}
 
-string bin(ll n) {return bitset<64> (n).to_string();}
+string bin(ll n) {return bitset<32> (n).to_string();}
 ll countBits( ll number) { return (ll)log2(number)+1;}
 bool is(string temp){char c = temp[0]; string s((temp).size(),c); return s<=temp;}
 
@@ -56,7 +55,29 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    inp(arr,n)
+    vll v(33, 0);
+    for(ll i=0;i<n;i++){
+        string s = bin(arr[i]);
+        for(ll j=0;j<32;j++){
+            if(s[j] == '1')
+                v[j]++;
+        }
+    }
+    ll ans = 0;
+    for(ll i=0;i<32;i++){
+        if(v[i])
+            ans = gcd(ans,v[i]);
+    }
+    sll final;
+    for(ll i=1;i<=n;i++){
+        if(ans%i == 0){
+            cout<<i<<" ";
+        }
+    }
+    cout<<ans<<"\n";
+    cout<<"\n";
 }
 
 

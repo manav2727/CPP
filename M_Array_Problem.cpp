@@ -54,14 +54,37 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 // string(1,char(i))+char(j))....to concatenate 2 or more characters using ascii
 // ASCII of 'a'-97,'z'-123,'A'-65,'Z'-90,'0'-48,'9'-57
 
-
+vll temp;
 void LetsSolveIt(){
+    var(n)
+    inp(arr,n)
+    mll m,m2;
+    for(ll i=0;i<n;i++)
+    {
+        m[arr[i]]++;
+    }
+    ll k = 1;
+    
+    while(k <= 1e9)
+    {
+        m2[k]++;
+        temp.push_back(k);
+        k *= 2;
+    }
+    for(ll j=0;j<30;j++)
+    {
+        
+        for(ll i=0;i<n;i++)
+        {
+            
+        }
+    }
     
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

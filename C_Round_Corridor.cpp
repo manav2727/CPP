@@ -56,12 +56,27 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)var(m)var(k)
+    ll g = gcd(n,m);
+    ll temp[3] = {0, n/g, m/g};
+    for(ll i=0;i<k;i++)
+    {
+        var(x1)var(y1)var(x2)var(y2)
+        if(cl(y1, temp[x1]) == cl(y2, temp[x2]))
+        {
+            cout<<"YES\n";
+        }
+        else
+        {
+            cout<<"NO\n";
+        }
+        
+    }
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

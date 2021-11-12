@@ -56,12 +56,50 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)var(k)
+    inp(ini,n)
+    inp(given,n)
+    ll mini = inf;
+    vll req;
+    for(ll i=0;i<n;i++)
+    {
+        mini = min(mini, given[i]/ini[i]);
+    }
+    for(ll i=0;i<n;i++)
+    {
+        req.push_back(given[i] - mini*ini[i]);
+    }
+    ll i=0,ans = mini;
+    while(k >= 0)
+    {
+        if(req[i] >= ini[i])
+        {
+            req[i] -= ini[i];
+        }
+        else if(k >= (ini[i] - req[i]))
+        {
+            k -= (ini[i] - req[i]);
+            req[i] = 0;
+        }
+        else
+        {
+            break;
+        }
+        
+        i++;
+        if(i == n)
+        {
+            i = 0;
+            ans++;
+        }
+        
+    }
+    cout<<ans;
 }
 
 
 signed main(){ 
     FIO;
-    test
+    // test
         LetsSolveIt();
 }

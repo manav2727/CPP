@@ -56,7 +56,37 @@ void print(vll a){for(auto i : a)cout<<i<<" ";"\n";}
 
 
 void LetsSolveIt(){
-    
+    var(n)
+    vpll ans;
+    if(n == 4)
+    {
+        cout << "3\n3 4\n";
+        cout << "4 2\n";
+        cout << "4 2\n";
+        return;
+    }
+ 
+    if(n == 3)
+    {
+        cout << "2\n3 2\n";
+        cout << "3 2\n";
+        return;
+    }
+    while(n > 2)
+    {
+        ll left = ceil(sqrt(n)) + 1, right = n - 1;
+        for(ll i = left;i <= right;i++)
+        {
+            ans.push_back({i,n});
+        }
+        ans.push_back({n, left-1});
+        ans.push_back({n, left-1});
+
+        n = left - 1;
+    }
+    cout<<ans.size()<<"\n";
+    for(ll i=0;i<ans.size();i++)
+        cout<<ans[i].first<<" "<<ans[i].second<<"\n";
 }
 
 
