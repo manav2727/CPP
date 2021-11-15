@@ -1,4 +1,4 @@
- #include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 
@@ -12,14 +12,17 @@ typedef std::vector<string> vsll;
 typedef std::vector<pll> vpll;
 typedef std::vector<vll> vvll;
 typedef map<ll,ll> mll;
+typedef map<ll,vll> mvll;
 typedef map<char,ll> mcll;
-typedef map<ll,pll> mpll;
+typedef map<pll,ll> mpll;
 typedef set<ll> sll;
+
 
 
 #define test            ll t;cin>>t;while(t--)
 #define var(n)          ll n;cin>>n;
 #define vars(s)         string s;cin>>s;
+#define varc(s)         char s;cin>>s;
 #define inp(a,n)       vll a(n);for(ll i = 0;i<n;i++) cin>>a[i];
 #define pqs             priority_queue<ll,vll,greater<ll> >
 #define setbits(x)      __builtin_popcountll(x)
